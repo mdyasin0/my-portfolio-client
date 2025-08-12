@@ -3,12 +3,10 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { ThemeContext } from "../Context/ThemeContext";
 
-// Example ThemeContext; replace with your actual one if different.
-
 export default function ContactSection() {
   const { mode } = useContext(ThemeContext);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState(null); // success / error / null
+  const [status, setStatus] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
   const baseBg = mode === "dark" ? "bg-[#0f172a]" : "bg-[#f7f8fc]";
@@ -21,49 +19,64 @@ export default function ContactSection() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.message) {
-      setStatus({ type: "error", msg: "সব ফিল্ড পূরণ করুন।" });
-      return;
-    }
-    // Basic email pattern
-    const emailPattern = /\S+@\S+\.\S+/;
-    if (!emailPattern.test(form.email)) {
-      setStatus({ type: "error", msg: "বৈধ ইমেইল দিন।" });
-      return;
-    }
+  e.preventDefault();
 
-    setSubmitting(true);
-    setStatus(null);
-    try {
-      // TODO: এখানে API কল বা ইমেইল সার্ভিস integrate করো
-      await new Promise((r) => setTimeout(r, 1000)); // placeholder delay
+  if (!form.name || !form.email || !form.message) {
+    setStatus({ type: "error", msg: "fill all input field" });
+    return;
+  }
 
-      setStatus({ type: "success", msg: "মেসেজ সফলভাবে পাঠানো হয়েছে!" });
+  const emailPattern = /\S+@\S+\.\S+/;
+  if (!emailPattern.test(form.email)) {
+    setStatus({ type: "error", msg: "give valid email" });
+    return;
+  }
+
+  setSubmitting(true);
+  setStatus(null);
+
+  try {
+    const res = await fetch("http://localhost:5000/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      setStatus({ type: "success", msg: "succes" });
       setForm({ name: "", email: "", message: "" });
-    } catch  {
-      setStatus({ type: "error", msg: "পাঠাতে সমস্যা হয়েছে, পরে আবার চেষ্টা করুন।" });
-    } finally {
-      setSubmitting(false);
+    } else {
+      setStatus({ type: "error", msg: data.message || "somthing went wrong" });
     }
-  };
+  } catch {
+    setStatus({ type: "error", msg: "please try letter" });
+  } finally {
+    setSubmitting(false);
+  }
+};
 
   return (
     <section
-      className={`${baseBg} ${baseText} py-16 px-6`}
+      className={`${baseBg} ${baseText} py-16 px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32`}
       aria-label="Contact"
     >
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-center text-4xl font-bold mb-2">Contact Me</h2>
-        <p className="text-center mb-8">
-          কোনো প্রশ্ন বা প্রজেক্ট আলোচনা করতে ফর্মটি পূরণ করুন।
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-center text-4xl font-bold mb-4 sm:mb-6">Contact Me</h2>
+        <p className="text-center mb-10 max-w-xl mx-auto text-base sm:text-lg">
+          Please fill out the form to ask any questions or discuss projects.
         </p>
 
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-12 md:grid-cols-2">
           {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className={`space-y-4 p-6 rounded-2xl ${mode === "dark" ? "bg-[#1f2a44]" : "bg-white"} shadow-md`}
+            className={`space-y-6 p-6 rounded-3xl shadow-lg ${
+              mode === "dark" ? "bg-[#1f2a44]" : "bg-white"
+            }`}
           >
             {status && (
               <div
@@ -77,6 +90,7 @@ export default function ContactSection() {
                 {status.msg}
               </div>
             )}
+
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="name">
                 Name
@@ -87,15 +101,14 @@ export default function ContactSection() {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Your name"
-                className={`w-full rounded-lg px-4 py-3 border ${inputBorder} ${inputBg} focus:outline-none focus:ring-2 focus:ring-indigo-400`}
+                className={`w-full rounded-lg px-4 py-3 border ${inputBorder} ${inputBg} focus:outline-none focus:ring-2 focus:ring-indigo-400 transition`}
                 disabled={submitting}
+                autoComplete="name"
               />
             </div>
+
             <div>
-              <label
-                className="block text-sm font-medium mb-1"
-                htmlFor="email"
-              >
+              <label className="block text-sm font-medium mb-1" htmlFor="email">
                 Email
               </label>
               <input
@@ -105,15 +118,14 @@ export default function ContactSection() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
-                className={`w-full rounded-lg px-4 py-3 border ${inputBorder} ${inputBg} focus:outline-none focus:ring-2 focus:ring-indigo-400`}
+                className={`w-full rounded-lg px-4 py-3 border ${inputBorder} ${inputBg} focus:outline-none focus:ring-2 focus:ring-indigo-400 transition`}
                 disabled={submitting}
+                autoComplete="email"
               />
             </div>
+
             <div>
-              <label
-                className="block text-sm font-medium mb-1"
-                htmlFor="message"
-              >
+              <label className="block text-sm font-medium mb-1" htmlFor="message">
                 Message
               </label>
               <textarea
@@ -123,36 +135,39 @@ export default function ContactSection() {
                 onChange={handleChange}
                 placeholder="Your message..."
                 rows="5"
-                className={`w-full rounded-lg px-4 py-3 border ${inputBorder} ${inputBg} resize-none focus:outline-none focus:ring-2 focus:ring-indigo-400`}
+                className={`w-full rounded-lg px-4 py-3 border ${inputBorder} ${inputBg} resize-none focus:outline-none focus:ring-2 focus:ring-indigo-400 transition`}
                 disabled={submitting}
               ></textarea>
             </div>
-            <div className="pt-2">
-              <button
-                type="submit"
-                disabled={submitting}
-                className="w-full inline-block text-center font-semibold rounded-2xl px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white transition disabled:opacity-50"
-              >
-                {submitting ? "পাঠানো হচ্ছে..." : "Send Message"}
-              </button>
-            </div>
+
+            <button
+              type="submit"
+              disabled={submitting}
+              className="w-full text-center font-semibold rounded-3xl px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white transition disabled:opacity-50"
+            >
+              {submitting ? "Sending..." : "Send Message"}
+            </button>
           </form>
 
           {/* Social Links */}
-          <div className="flex flex-col justify-center items-start p-6 rounded-2xl shadow-md" style={{ background: mode === "dark" ? "#1f2a44" : "#ffffff" }}>
-            <h3 className="text-2xl font-semibold mb-4">Connect on</h3>
-            <p className="mb-6">
-              আপনি নিচের প্ল্যাটফর্মগুলোতে আমাকে ফলো বা মেসেজ করতে পারেন:
+          <div
+            className={`flex flex-col justify-center items-start p-6 rounded-3xl shadow-lg ${
+              mode === "dark" ? "bg-[#1f2a44]" : "bg-white"
+            }`}
+          >
+            <h3 className="text-2xl font-semibold mb-5">Connect on</h3>
+            <p className="mb-8 text-base sm:text-lg max-w-md">
+              You can follow or message me on the following platforms
             </p>
-            <div className="flex gap-6 mb-6">
+            <div className="flex flex-wrap gap-8">
               <a
                 href="https://facebook.com/"
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center text-lg hover:scale-105 transition"
+                className="flex flex-col items-center text-lg hover:scale-110 transform transition"
               >
-                <FaFacebook className="w-8 h-8 mb-1" />
+                <FaFacebook className="w-10 h-10 mb-1" />
                 <span className="text-sm">Facebook</span>
               </a>
               <a
@@ -160,9 +175,9 @@ export default function ContactSection() {
                 aria-label="GitHub"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center text-lg hover:scale-105 transition"
+                className="flex flex-col items-center text-lg hover:scale-110 transform transition"
               >
-                <FaGithub className="w-8 h-8 mb-1" />
+                <FaGithub className="w-10 h-10 mb-1" />
                 <span className="text-sm">GitHub</span>
               </a>
               <a
@@ -170,21 +185,20 @@ export default function ContactSection() {
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center text-lg hover:scale-105 transition"
+                className="flex flex-col items-center text-lg hover:scale-110 transform transition"
               >
-                <FaLinkedin className="w-8 h-8 mb-1" />
+                <FaLinkedin className="w-10 h-10 mb-1" />
                 <span className="text-sm">LinkedIn</span>
               </a>
               <a
                 href="mailto:youremail@example.com"
                 aria-label="Email"
-                className="flex flex-col items-center text-lg hover:scale-105 transition"
+                className="flex flex-col items-center text-lg hover:scale-110 transform transition"
               >
-                <MdEmail className="w-8 h-8 mb-1" />
+                <MdEmail className="w-10 h-10 mb-1" />
                 <span className="text-sm">Email</span>
               </a>
             </div>
-            
           </div>
         </div>
       </div>

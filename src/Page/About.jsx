@@ -26,32 +26,31 @@ const About1 = () => {
                   ? "bg-[#1e293b]  text-[#e0e7ff]"
                   : "bg-[#f1f5f9] text-[#1e293b] "
               }`}>
-           <div className="flex max-w-5xl  mx-auto gap-10 ">
-             <div >
-                <div className="relative w-70 h-70">
-          <div className="w-full h-full rounded-full bg-[#F8B561]"></div>
-          <img
-            src="src/assets/Untitled_design-removebg-preview.png"
-            alt="MD Yasin profile"
-            className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-72 h-72 object-cover rounded-full"
-          />
-        </div>
-            </div>
+           <div className="flex flex-col md:flex-row max-w-5xl mx-auto gap-6 md:gap-10 px-4 md:px-0 items-center md:items-start">
+  <div className="relative w-56 h-56 md:w-72 md:h-72 flex-shrink-0">
+    <div className="w-full h-full rounded-full bg-[#F8B561]"></div>
+    <img
+      src="src/assets/Untitled_design-removebg-preview.png"
+      alt="MD Yasin profile"
+      className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-56 h-56 md:w-72 md:h-72 object-cover rounded-full"
+    />
+  </div>
 
-            <div>
-                <h1 className='text-3xl font-bold mb-10 '>About</h1>
-                <p>
-                   Hey there! I’m MD Yasin, a passionate MERN Stack Developer based in Dhaka, Bangladesh.
-I have explored and mastered technologies like HTML, CSS, Tailwind CSS, JavaScript, React.js, Firebase, Node.js, Express.js, and MongoDB.
-I love turning ideas into fully functional, responsive, and visually appealing web applications — whether it’s an e-commerce platform, a service-based website, or a clean, effective landing page.
-My goal is to build scalable, high-performance solutions that not only work seamlessly but also deliver a great user experience.
-Let’s collaborate and create something awesome together!
-                </p>
-            </div>
-           </div>
+  <div className="text-center md:text-left">
+    <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-10">About</h1>
+    <p className="text-sm md:text-base leading-relaxed max-w-xl">
+      Hey there! I’m MD Yasin, a passionate MERN Stack Developer based in Dhaka, Bangladesh.
+      I have explored and mastered technologies like HTML, CSS, Tailwind CSS, JavaScript, React.js, Firebase, Node.js, Express.js, and MongoDB.
+      I love turning ideas into fully functional, responsive, and visually appealing web applications — whether it’s an e-commerce platform, a service-based website, or a clean, effective landing page.
+      My goal is to build scalable, high-performance solutions that not only work seamlessly but also deliver a great user experience.
+      Let’s collaborate and create something awesome together!
+    </p>
+  </div>
+</div>
+
            {/* tecknology stack */}
 
-           <div>
+           <div className='px-2'>
             <div className='max-w-5xl mx-auto pt-10'>
               <h1 className={`border-b  pb-5 font-bold text-3xl  ${
                 mode === "dark"
