@@ -69,39 +69,59 @@ const About1 = () => {
              <ul className='flex flex-wrap  text-4xl pt-5 gap-8'>
   <li className='flex flex-col items-center text-red-600'>
     <FaHtml5 />
-    <p className='text-base text-black dark:text-white mt-1'>HTML</p>
+    <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>HTML</p>
   </li>
   <li className='flex flex-col items-center text-blue-700'>
     <IoLogoCss3 />
-    <p className='text-base text-black dark:text-white mt-1'>CSS</p>
+    <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>CSS</p>
   </li>
   <li className='flex flex-col items-center text-green-500'>
     <RiTailwindCssFill />
-    <p className='text-base text-black dark:text-white mt-1'>Tailwind</p>
+    <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Tailwind</p>
   </li>
   <li className='flex flex-col items-center text-yellow-500'>
     <IoLogoJavascript />
-    <p className='text-base text-black dark:text-white mt-1'>JavaScript</p>
+    <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>JavaScript</p>
   </li>
   <li className='flex flex-col items-center text-sky-500'>
     <FaReact />
-    <p className='text-base text-black dark:text-white mt-1'>React</p>
+    <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>React</p>
   </li>
   <li className='flex flex-col items-center text-red-300'>
     <SiFirebase />
-    <p className='text-base text-black dark:text-white mt-1'>Firebase</p>
+    <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Firebase</p>
   </li>
   <li className='flex flex-col items-center text-[#7CB700]'>
     <FaNodeJs />
-    <p className='text-base text-black dark:text-white mt-1'>Node.js</p>
+    <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Node.js</p>
   </li>
-  <li className='flex flex-col items-center text-[#303030]'>
-    <SiExpress />
-    <p className='text-base text-black dark:text-white mt-1'>Express.js</p>
+  <li className='flex flex-col items-center '>
+    <SiExpress  className={` ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}/>
+    <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Express.js</p>
   </li>
   <li className='flex flex-col items-center text-[#4DA53F]'>
     <DiMongodb />
-    <p className='text-base text-black dark:text-white mt-1'>MongoDB</p>
+    <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>MongoDB</p>
   </li>
 </ul>
 
@@ -118,59 +138,89 @@ const About1 = () => {
              <ul className='flex flex-wrap justify-center items-center gap-8 pt-5'>
   <li className='flex flex-col items-center text-center text-4xl'>
     <img className='w-15' src="src/assets/vite.png" alt="" />
-    <p className='text-sm mt-2'>Vite</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Vite</p>
   </li>
   <li className='flex text-[#4F39F6] flex-col items-center text-center text-4xl'>
     <TbCircleLetterSFilled />
-    <p className='text-sm mt-2 text-black'>Swiper</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Swiper</p>
   </li>
   <li className='flex flex-col items-center text-center'>
     <img className='w-10' src="src/assets/aos.png" alt="AOS" />
-    <p className='text-sm mt-2'>AOS</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>AOS</p>
   </li>
   <li className='flex flex-col items-center text-center text-4xl text-red-600'>
     <FaReact />
-    <p className='text-sm mt-2 text-black'>React Icons</p>
+    <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>React Icons</p>
   </li>
   <li className='flex flex-col items-center text-center'>
     <img className='w-10' src="src/assets/lottie.png" alt="Lottie" />
-    <p className='text-sm mt-2'>Lottie Player</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Lottie Player</p>
   </li>
   <li className='flex flex-col items-center text-center'>
     <img className='w-20' src="src/assets/axios.png" alt="Axios" />
-    <p className='text-sm mt-2'>Axios</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Axios</p>
   </li>
   <li className='flex flex-col items-center text-center'>
     <img className='w-20' src="src/assets/sweetalert.png" alt="SweetAlert2" />
-    <p className='text-sm mt-2'>SweetAlert2</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>SweetAlert2</p>
   </li>
   <li className='flex flex-col items-center text-center'>
     <img className='w-25' src="src/assets/tost.png" alt="Toastify" />
-    <p className='text-sm mt-2'>Toastify</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Toastify</p>
   </li>
   <li className='flex flex-col items-center text-center text-4xl'>
 <img className='w-18' src="src/assets/famer.png" alt="" />
-    <p className='text-sm mt-2'>Framer Motion</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Framer Motion</p>
   </li>
   <li className='flex flex-col items-center text-black text-center text-4xl'>
-    <SiDotenv />
-    <p className='text-sm mt-2'>dotenv</p>
+    < SiDotenv className={` ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}/>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>dotenv</p>
   </li>
   <li className='flex flex-col items-center text-center'>
     <img className='w-14' src="src/assets/cors.png" alt="cors" />
-    <p className='text-sm mt-2'>cors</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>cors</p>
   </li>
   <li className='flex flex-col items-center text-center'>
     <img className='w-10' src="src/assets/cookie.png" alt="cookie-parser" />
-    <p className='text-sm mt-2'>cookie-parser</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>cookie-parser</p>
   </li>
   <li className='flex flex-col items-center text-center'>
     <img className='w-11' src="src/assets/jwt.png" alt="JWT" />
-    <p className='text-sm mt-2'>JWT</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>JWT</p>
   </li>
   <li className='flex flex-col items-center text-center text-4xl text-indigo-600'>
     <FaCcStripe />
-    <p className='text-sm mt-2'>Stripe</p>
+    <p  className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Stripe</p>
   </li>
 </ul>
 
@@ -185,39 +235,57 @@ const About1 = () => {
               <ul className="flex flex-wrap justify-center items-center gap-10 pt-5">
   <li className="flex flex-col items-center text-center text-2xl">
     <img className="w-10" src="src/assets/google.png" alt="Google Ads" />
-    <p className="text-sm mt-2 text-black ">Google Ads</p>
+    <p   className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Google Ads</p>
   </li>
   <li className="flex flex-col items-center text-center text-blue-700 text-2xl">
     <FaFacebookSquare />
-    <p className="text-sm mt-2 text-black ">Facebook Ads</p>
+    <p   className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Facebook Ads</p>
   </li>
   <li className="flex flex-col items-center text-center text-red-600 text-2xl">
     <FaInstagram />
-    <p className="text-sm mt-2 text-black ">Instagram Ads</p>
+    <p   className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Instagram Ads</p>
   </li>
   <li className="flex flex-col items-center text-center text-blue-700 text-2xl">
     <CiLinkedin />
-    <p className="text-sm mt-2 text-black ">LinkedIn Ads</p>
+    <p   className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>LinkedIn Ads</p>
   </li>
   <li className="flex flex-col items-center text-center text-2xl">
     <FaSquareXTwitter />
-    <p className="text-sm mt-2 text-black ">Twitter Ads</p>
+    <p   className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Twitter Ads</p>
   </li>
   <li className="flex flex-col items-center text-center text-green-500 text-2xl">
     <SiGoogleanalytics />
-    <p className="text-sm mt-2 text-black ">Google Analytics</p>
+    <p   className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Google Analytics</p>
   </li>
   <li className="flex flex-col items-center text-center text-sky-700 text-2xl">
     <SiGooglesearchconsole />
-    <p className="text-sm mt-2 text-black ">Search Console</p>
+    <p   className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Search Console</p>
   </li>
   <li className="flex flex-col items-center text-center text-2xl">
     <FaMailchimp />
-    <p className="text-sm mt-2 text-black ">Mailchimp</p>
+    <p   className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Mailchimp</p>
   </li>
   <li className="flex flex-col items-center text-center text-2xl text-[#07B6C7]">
     <SiCanva />
-    <p className="text-sm mt-2 text-black ">Canva</p>
+    <p   className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Canva</p>
   </li>
 </ul>
 

@@ -4,9 +4,10 @@ import { ThemeContext } from "../Context/ThemeContext";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 const Navbar = () => {
-  const { mode, toggleMode } = useContext(ThemeContext);
+   const { mode ,toggleMode } = useContext(ThemeContext);
+  
   return (
-    <div>
+    <div className="sticky  top-0 z-20">
       <nav
         className={`py-3 px-5   ${
           mode === "dark"
@@ -37,6 +38,9 @@ const Navbar = () => {
           </div>
           <div>
             <NavLink>Contact</NavLink>
+          </div>
+          <div>
+            <NavLink to="/dashboard">Dshboard</NavLink>
           </div>
           <div className="flex items-center">
             <button

@@ -40,12 +40,19 @@ const Project = () => {
   const { mode } = useContext(ThemeContext);
 
   return (
-    <section
-      className={`max-w-6xl mx-auto px-4 py-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 ${
+    <div   className={` ${
         mode === "dark"
           ? "bg-[#0f172a] text-[#e0e7ff]"
           : "bg-[#f7f8fc] text-[#1e293b]"
-      }`}
+      }`}>
+        <h1
+         className={` text-center text-5xl font-bold  ${
+        mode === "dark"
+          ? "bg-[#0f172a] text-[#e0e7ff]"
+          : "bg-[#f7f8fc] text-[#1e293b]"
+      }`}>Letest project</h1>
+      <section
+      className={`max-w-6xl mx-auto px-4 py-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 `}
     >
       {projects.map((project, index) => (
         <div
@@ -97,6 +104,7 @@ const Project = () => {
         </div>
       ))}
     </section>
+    </div>
   );
 };
 

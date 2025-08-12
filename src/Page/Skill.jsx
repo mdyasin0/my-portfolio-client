@@ -33,23 +33,33 @@ const Skills = () => {
         <ul className="flex flex-wrap gap-10">
           <li className="flex flex-col items-center text-orange-600">
             <FaHtml5 className="text-4xl" />
-            <p className="mt-1 text-base">HTML</p>
+            <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>HTML</p>
           </li>
           <li className="flex flex-col items-center text-blue-700">
             <IoLogoCss3 className="text-4xl" />
-            <p className="mt-1 text-base">CSS</p>
+            <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>CSS</p>
           </li>
           <li className="flex flex-col items-center text-teal-400">
             <RiTailwindCssFill className="text-4xl" />
-            <p className="mt-1 text-base">Tailwind CSS</p>
+            <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Tailwind CSS</p>
           </li>
           <li className="flex flex-col items-center text-yellow-400">
             <IoLogoJavascript className="text-4xl" />
-            <p className="mt-1 text-base">JavaScript</p>
+            <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>JavaScript</p>
           </li>
           <li className="flex flex-col items-center text-sky-500">
             <FaReact className="text-4xl" />
-            <p className="mt-1 text-base">React</p>
+            <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>React</p>
           </li>
         </ul>
       </div>
@@ -60,11 +70,17 @@ const Skills = () => {
         <ul className="flex flex-wrap gap-10">
           <li className="flex flex-col items-center text-green-700">
             <FaNodeJs className="text-4xl" />
-            <p className="mt-1 text-base">Node.js</p>
+            <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Node.js</p>
           </li>
           <li className="flex flex-col items-center text-gray-800 dark:text-gray-300">
-            <SiExpress className="text-4xl" />
-            <p className="mt-1 text-base">Express.js</p>
+            <SiExpress className={`text-4xl ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`} />
+            <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Express.js</p>
           </li>
         </ul>
       </div>
@@ -75,7 +91,9 @@ const Skills = () => {
         <ul className="flex flex-wrap gap-10">
           <li className="flex flex-col items-center text-green-600">
             <DiMongodb className="text-4xl" />
-            <p className="mt-1 text-base">MongoDB</p>
+            <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>MongoDB</p>
           </li>
         </ul>
       </div>
@@ -86,15 +104,23 @@ const Skills = () => {
         <ul className="flex flex-wrap gap-10">
           <li className="flex flex-col items-center text-yellow-500">
             <SiFirebase  className="text-4xl" />
-            <p className="mt-1 text-base">Firebase</p>
+            <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Firebase</p>
           </li>
           <li className="flex flex-col items-center text-gray-600 dark:text-gray-300">
-            <FaGitAlt className="text-4xl" />
-            <p className="mt-1 text-base">Git</p>
+            <FaGitAlt className={`text-4xl ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`} />
+            <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Git</p>
           </li>
           <li className="flex flex-col items-center text-purple-700">
             <SiVite className="text-4xl" />
-            <p className="mt-1 text-base">Vite</p>
+            <p className={`mt-1 text-base ${
+        mode === "dark" ? "text-white" : "text-black"
+      }`}>Vite</p>
           </li>
         </ul>
       </div>
@@ -107,17 +133,7 @@ const Skills = () => {
         Digital Marketing Skill
       </h2>
 
-      {/* All Services Summary */}
-      <div className="mb-8">
     
-        <ul className="list-disc ml-6 space-y-1 text-base">
-          <li>SEO</li>
-          <li>Social Media Management</li>
-          <li>SEM (Search Engine Marketing)</li>
-          <li>Email Marketing</li>
-          <li>Paid Social Media Campaigns</li>
-        </ul>
-      </div>
 
       {/* SEO */}
       <div className="mb-8">
