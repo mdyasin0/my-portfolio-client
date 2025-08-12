@@ -10,20 +10,11 @@ import { CiLinkedin } from 'react-icons/ci';
 import { FaSquareXTwitter } from 'react-icons/fa6';
 const softSkills = [
   "Problem-Solving",
-  "Communication Skills",
-  "Team Collaboration",
   "Time Management",
-  "Creativity & Design Thinking",
-  "Adaptability",
   "Critical Thinking",
-  "Attention to Detail",
   "Project Management",
   "Client Communication",
   "Self-Learning & Research Ability",
-  "Analytical Skills",
-  "SEO Strategy & Planning (for marketing)",
-  "Campaign Optimization (for marketing)",
-  "Content Strategy Understanding (for both dev & marketing)"
 ];
 
 
@@ -50,9 +41,11 @@ const About1 = () => {
             <div>
                 <h1 className='text-3xl font-bold mb-10 '>About</h1>
                 <p>
-                    Hey there! I’m MD Yasin, a passionate full-stack web developer and digital marketing enthusiast based in Dhaka, Bangladesh. <br />
-                    Over the past year, I’ve been diving deep into the world of web development, working with technologies like HTML, CSS, Tailwind CSS, JavaScript, React.js, Firebase, Node.js, Express.js, and MongoDB. I enjoy turning ideas into real, responsive websites — whether it’s an e-commerce platform, a service-based website, or a clean, effective landing page. <br />
-                     But that’s not all. I also wear the hat of a Digital Marketer, helping businesses grow online through strategic efforts in: <br /> 📈 SEO – including On-Page, Off-Page, Keyword Research & Technical SEO <br />🎯 Paid Ads – on Facebook, Instagram, Google, LinkedIn & Twitter <br />📧 Email Marketing – from cold outreach to automation and campaign management <br /> 📱 Social Media Management – keeping brands active and engaging on major platforms <br /> Whether I’m building a full-stack app or running a high-performing ad campaign, my goal is always the same: create meaningful, impactful results. <br /> <br /> Let’s collaborate and build something awesome together!
+                   Hey there! I’m MD Yasin, a passionate MERN Stack Developer based in Dhaka, Bangladesh.
+I have explored and mastered technologies like HTML, CSS, Tailwind CSS, JavaScript, React.js, Firebase, Node.js, Express.js, and MongoDB.
+I love turning ideas into fully functional, responsive, and visually appealing web applications — whether it’s an e-commerce platform, a service-based website, or a clean, effective landing page.
+My goal is to build scalable, high-performance solutions that not only work seamlessly but also deliver a great user experience.
+Let’s collaborate and create something awesome together!
                 </p>
             </div>
            </div>
@@ -225,71 +218,7 @@ const About1 = () => {
 </ul>
 
             </div>
-            <div className='max-w-5xl mx-auto pt-10'>
-               <h1 className={`border-b  pb-5 font-bold text-3xl  ${
-                mode === "dark"
-                  ? " border-white  "
-                  : "border-black"
-              }`}> Digital Marketing Technology</h1>
-
-              <ul className="flex flex-wrap justify-center items-center gap-10 pt-5">
-  <li className="flex flex-col items-center text-center text-2xl">
-    <img className="w-10" src="src/assets/google.png" alt="Google Ads" />
-    <p   className={`mt-1 text-base ${
-        mode === "dark" ? "text-white" : "text-black"
-      }`}>Google Ads</p>
-  </li>
-  <li className="flex flex-col items-center text-center text-blue-700 text-2xl">
-    <FaFacebookSquare />
-    <p   className={`mt-1 text-base ${
-        mode === "dark" ? "text-white" : "text-black"
-      }`}>Facebook Ads</p>
-  </li>
-  <li className="flex flex-col items-center text-center text-red-600 text-2xl">
-    <FaInstagram />
-    <p   className={`mt-1 text-base ${
-        mode === "dark" ? "text-white" : "text-black"
-      }`}>Instagram Ads</p>
-  </li>
-  <li className="flex flex-col items-center text-center text-blue-700 text-2xl">
-    <CiLinkedin />
-    <p   className={`mt-1 text-base ${
-        mode === "dark" ? "text-white" : "text-black"
-      }`}>LinkedIn Ads</p>
-  </li>
-  <li className="flex flex-col items-center text-center text-2xl">
-    <FaSquareXTwitter />
-    <p   className={`mt-1 text-base ${
-        mode === "dark" ? "text-white" : "text-black"
-      }`}>Twitter Ads</p>
-  </li>
-  <li className="flex flex-col items-center text-center text-green-500 text-2xl">
-    <SiGoogleanalytics />
-    <p   className={`mt-1 text-base ${
-        mode === "dark" ? "text-white" : "text-black"
-      }`}>Google Analytics</p>
-  </li>
-  <li className="flex flex-col items-center text-center text-sky-700 text-2xl">
-    <SiGooglesearchconsole />
-    <p   className={`mt-1 text-base ${
-        mode === "dark" ? "text-white" : "text-black"
-      }`}>Search Console</p>
-  </li>
-  <li className="flex flex-col items-center text-center text-2xl">
-    <FaMailchimp />
-    <p   className={`mt-1 text-base ${
-        mode === "dark" ? "text-white" : "text-black"
-      }`}>Mailchimp</p>
-  </li>
-  <li className="flex flex-col items-center text-center text-2xl text-[#07B6C7]">
-    <SiCanva />
-    <p   className={`mt-1 text-base ${
-        mode === "dark" ? "text-white" : "text-black"
-      }`}>Canva</p>
-  </li>
-</ul>
-
-            </div>
+            
             <div>
                <section
       className={`py-10 px-4 max-w-5xl mx-auto ${

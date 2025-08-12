@@ -10,22 +10,21 @@ export default function Footer() {
   const { mode } = useContext(ThemeContext);
   
 
-  const bg = mode === "dark" ? "bg-[#0f172a]" : "bg-[#f7f8fc]";
-  const text = mode === "dark" ? "text-[#e0e7ff]" : "text-[#1e293b]";
+  const bg = mode === "dark" ? "bg-[#0f172a]" : "bg-[#1E293B]";
+  const text = mode === "dark" ? "text-[#e0e7ff]" : "text-[#e0e7ff]";
   
   
 
  
 
   return (
-    <footer className={`${bg} ${text} py-12`}>
-      <div className="max-w-7xl mx-auto px-6 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <footer className={`${bg} ${text}  pt-10 `}>
+      <div className="max-w-7xl gap-40  mx-auto px-6 grid  sm:grid-cols-2 lg:grid-cols-4">
         {/* Branding / About */}
-        <div className="space-y-3">
+        <div className="space-y-3 ">
           <h3 className="text-xl font-bold">YourName</h3>
           <p className="text-sm">
-            Web development & digital marketing service provider. Building,
-            growing, and scaling online presence with care.
+            MERN Stack Developer crafting efficient and scalable web applications to build and enhance your online presence.
           </p>
         </div>
 
@@ -111,19 +110,9 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="mt-10 border-t" style={{ borderColor: mode === "dark" ? "#334166" : "#d1d9ee" }}>
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center text-sm">
-          <p>&copy; {new Date().getFullYear()} YourName. All rights reserved.</p>
-          <div className="flex gap-4 mt-2 sm:mt-0">
-            <a href="#privacy" className="hover:underline">
-              Privacy Policy
-            </a>
-            <a href="#terms" className="hover:underline">
-              Terms of Service
-            </a>
-            <a href="#contact" className="hover:underline">
-              Support
-            </a>
-          </div>
+        <div className="    text-center text-sm">
+          <p className="py-3">&copy; {new Date().getFullYear()} YourName. All rights reserved.</p>
+          
         </div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaFacebook, FaTwitter } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const Home = () => {
   const { mode } = useContext(ThemeContext);
@@ -10,8 +11,50 @@ const Home = () => {
       className={`${mode === "dark" ? "bg-[#0f172a]" : "bg-[#e0f2fe]"} py-20`}
     >
       <div className="max-w-5xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
-        {/* === Text Content === */}
-        <div>
+       <div className="flex gap-5">
+        <div className="flex flex-col gap-5.5">
+          
+            <a
+              href="https://facebook.com/"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full hover:bg-indigo-100"
+            >
+              <FaFacebook className="w-5 h-5" />
+            </a>
+            <a
+              href="https://github.com/"
+              aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full hover:bg-indigo-100"
+            >
+              <FaGithub className="w-5 h-5" />
+            </a>
+            <a
+              href="https://linkedin.com/"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full hover:bg-indigo-100"
+            >
+              <FaLinkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="https://twitter.com/"
+              aria-label="Twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full hover:bg-indigo-100"
+            >
+              <FaTwitter className="w-5 h-5" />
+            </a>
+           
+        
+        </div>
+         {/* === Text Content === */}
+        <div className="max-w-11/12">
           <h1
             className={`text-4xl font-bold mb-2 ${
               mode === "dark" ? "text-[#0ea5e9]" : "text-[#1e3a8a]"
@@ -32,18 +75,17 @@ const Home = () => {
               mode === "dark" ? "text-[#0ea5e9]" : "text-[#2563eb]"
             }`}
           >
-            MERN Stack Developer | Digital Marketer
+            MERN Stack Developer 
           </h3>
 
           <p
-            className={`mb-6 ${
+            className={`mb-6 max-w-2xl ${
               mode === "dark" ? "text-gray-400" : "text-gray-700"
             }`}
           >
-            I build responsive web apps using MERN stack and help brands grow
-            through effective digital marketing strategies.
+          I craft dynamic and user-friendly web  applications with the MERN stack, delivering  efficient  and scalable  solutions  that help businesses thrive online.
           </p>
-
+   
           {/* === Buttons === */}
           <div className="flex gap-4 mb-6">
             <button
@@ -69,6 +111,7 @@ const Home = () => {
             </a>
           </div>
         </div>
+       </div>
 
         {/* === Image Section === */}
         <div className="relative w-80 h-70">
