@@ -1,5 +1,5 @@
-
 import { useContext } from 'react';
+import { Element } from 'react-scroll'; 
 import './App.css'
 import Navbar from './Component/Navbar'
 import Home from './Page/home'
@@ -10,33 +10,38 @@ import Project from './Page/Project';
 import ContactSection from './Page/Contact';
 import Footer from './Page/Footer';
 
-
-
-
 function App() {
-  const { mode} = useContext(ThemeContext);
+  const { mode } = useContext(ThemeContext);
 
   return (
-    < >
-     
-     <div     className={`${
-          mode === "dark"
-            ? "  bg-[#0f172a]"
-            : "  bg-[#f7f8fc]"
-        }`}>
-      <Navbar></Navbar>
-      <Home></Home>
-      <About></About>
-      <Skills></Skills>
-      <Project></Project>
-      <ContactSection></ContactSection>
-      <Footer></Footer>
+    <div className={`${
+      mode === "dark" ? "bg-[#0f172a]" : "bg-[#f7f8fc]"
+    }`}>
+      <Navbar />
       
-      
+      <Element name="home">
+        <Home />
+      </Element>
 
-     </div>
-    </>
+      <Element name="about">
+        <About />
+      </Element>
+
+      <Element name="skills">
+        <Skills />
+      </Element>
+
+      <Element name="projects">
+        <Project />
+      </Element>
+
+      <Element name="contact">
+        <ContactSection />
+      </Element>
+
+      <Footer />
+    </div>
   )
 }
 
-export default App
+export default App;
